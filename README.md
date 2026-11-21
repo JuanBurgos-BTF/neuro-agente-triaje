@@ -68,6 +68,8 @@ P(positivo) = 0.3716, porque el promedio incluye ceros de relleno.
 
 El sistema conecta una interfaz interactiva en **Streamlit** (`app.py`) con un agente **ReAct / LangGraph** respaldado por `gemini-2.5-flash` y memoria por sesión (`MemorySaver` + `thread_id`). El agente orquesta dos herramientas especializadas: la inferencia local de la red neuronal entrenada en la Unidad 4 (`clasificar_sentimiento`) y una herramienta de reglas de negocio (`consultar_politica_escalamiento`).
 
+Conversación IA: [https://claude.ai/share/d8226537-8521-452c-9be3-26ca4a272afc](https://claude.ai/share/d8226537-8521-452c-9be3-26ca4a272afc)
+
 ```mermaid
 flowchart TD
     U[Usuario] --> UI[Interfaz Web Streamlit - app.py]
