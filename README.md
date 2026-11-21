@@ -8,16 +8,16 @@
 
 ### ¿Por qué red neuronal + agente y no solo un prompt a un LLM?
 
-La red neuronal no solamente permite identificar si una reseña es positiva o negativa,
-sino que también nos muestra una probabilidad que es posible analizar y comprobar. Por
-ejemplo, en nuestras pruebas se obtuvo 0.7734 en una reseña positiva y 99.31 % de
+La red neuronal permite unicamente identificar si una reseña es positiva o negativa,
+sino que también nos enseña una probabilidad que es posible analizar y comprobar. Por
+ejemplo, en nuestras pruebas se obtuvieron 0.7734 en una reseña positiva y 99.31 % de
 confianza en una negativa. Otra ventaja es que funciona de manera local, sin depender
 de servicios externos ni consumir cuota de la API de Google.
 
 Por otra parte, el agente interpreta las solicitudes del usuario y decide qué
 herramientas utilizar. Esto se comprobó en el Caso 3, donde encadenó la red neuronal y
 la política de escalamiento a partir de una sola petición. Además, en la prueba de
-memoria recordó el nombre "Ana" usando su `thread_id`, sin mezclar esa información con
+memoria recordó el nombre "Ana" usando su thread_id, sin mezclar esa información con
 otro hilo.
 
 ### Responsabilidades
