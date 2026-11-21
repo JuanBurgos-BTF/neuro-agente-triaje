@@ -1,0 +1,8 @@
+tensorflow
+numpy
+pandas
+streamlit
+langchain
+langgraph
+langchain-google-genai
+python-dotenv
