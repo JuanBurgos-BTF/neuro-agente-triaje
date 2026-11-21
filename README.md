@@ -63,3 +63,16 @@ En cuanto al caso 20409, se encontró un error en el modelo debido a que la rese
 
 Limitación adicional: la frase corta "This movie was absolutely wonderful" dio
 P(positivo) = 0.3716, porque el promedio incluye ceros de relleno.
+
+## 2. Arquitectura del sistema
+
+El sistema conecta una interfaz interactiva en **Streamlit** (`app.py`) con un agente **ReAct / LangGraph** respaldado por `gemini-2.5-flash` y memoria por sesión (`MemorySaver` + `thread_id`). El agente orquesta dos herramientas especializadas: la inferencia local de la red neuronal entrenada en la Unidad 4 (`clasificar_sentimiento`) y una herramienta de reglas de negocio (`consultar_politica_escalamiento`).
+
+```mermaid
+flowchart TD
+    U[Usuario] --> UI[Interfaz Web Streamlit - app.py]
+    UI <--> AG[Agente ReAct / LangGraph - Gemini 2.5 Flash]
+    AG <--> MEM[(Memoria Conversacional - MemorySaver / thread_id)]
+    AG --> T1["@tool #1: clasificar_sentimiento (Red Neuronal U4)"]
+    AG --> T2["@tool #2: consultar_politica_escalamiento (Reglas de Negocio)"]
+    T1 --> MOD[(Pesos Entrenados - models/)]
